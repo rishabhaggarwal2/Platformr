@@ -1,0 +1,300 @@
+// Author: Rishabh Aggarwal
+// This is CSS Awesomeness without bootstrap ;) 
+
+
+@mixin transition($transition-property, $transition-time, $method ) {
+    -webkit-transition: $transition-property $transition-time $method;
+    -moz-transition: $transition-property $transition-time $method;
+    -ms-transition: $transition-property $transition-time $method;
+    -o-transition: $transition-property $transition-time $method;
+    transition: $transition-property $transition-time $method;
+}
+
+
+body,html{
+	background: #eee;
+	color: #333;
+	font-family: Josefin Sans;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+*{
+	padding: 0;
+	margin:0;
+	font-family: Josefin Sans;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: Montserrat;
+	font-weight: 400;
+}
+
+h1{
+	font-size: 3em;
+}
+
+.container-fluid{
+	width: 100%;
+}
+
+.container{
+	width: 80%;
+	max-width: 1200px;
+	margin: auto;
+}
+
+.row{
+	width: 100%;
+	position: relative;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.width80{
+	width: 80%;
+	margin: auto;
+}
+
+.text-justify{
+	text-align: justify;
+}
+.marginTop40{
+	margin-top: 40px;
+}
+.marginTop20{
+	margin-top: 20px;
+}
+.marginBottom20{
+	margin-bottom: 20px;
+}
+.marginBottom40{
+	margin-bottom: 40px;
+}
+
+.platformHeader{
+	background: #34495e;
+	color: #eee;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
+.dashboardSearch input{
+	width: 100%;
+	margin-left:0%;
+	padding: 0;
+	padding: 10px;
+	border-radius: 0px; 
+	box-shadow: none;
+	outline: none;
+	border:none;
+	background:transparent;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	padding-left: 30px;
+}
+
+.dashboardSearch:before{
+	content: '\f002';
+	position: absolute;
+	top: 5px;
+	font-size: 20px;
+	left: 0;
+	font-family: FontAwesome;
+	color: #999;
+}
+
+.categories{
+	position: relative;
+}
+
+.category{
+	height: 200px;
+	width: 200px;
+	background:#fff;
+	overflow: hidden;
+	background:url('https://download.unsplash.com/reserve/wVlfnlTbRtK8eGvbnBZI_VolkanOlmez_005.jpg') center;
+	background-size: cover;
+	display: inline-block;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 40px;
+	cursor: pointer;
+
+	h2{
+		height: 200px;
+		width: 200px;
+		text-align: center;
+		background:rgba(44, 62, 80, 0.8);
+		vertical-align: middle;
+		display: inline-block;
+		padding-top:85px; 
+		box-sizing:border-box;
+		color: #fff;
+		@include transition(all, 0.5s, ease);
+
+	}
+}
+
+.category:hover h2{
+	opacity: 0;
+}
+
+// Posts Section 
+
+.categoryHeader{
+	background:url('https://download.unsplash.com/reserve/wVlfnlTbRtK8eGvbnBZI_VolkanOlmez_005.jpg') center;
+	background-size: cover;
+	color: #eee;
+}
+
+.colorMeBlue{
+	padding-top: 80px;
+	background:rgba(44,62,80,0.8);
+	padding-bottom: 80px;
+}
+
+.sortingOptions a{
+	text-decoration: none;
+	padding: 10px 20px;
+	display: inline;
+	border: 1px solid rgba(0,0,0,0.2);
+	color: #333;
+}
+.sortingOptions a:first-child{
+	border-right: none;
+}
+
+.sortingOptions a.active{
+	background: rgba(44, 62, 80, 0.9);
+	color: #fff;
+}
+
+.posts{
+	margin-top: 40px;
+	padding-bottom: 40px;
+
+	.post{
+		cursor: pointer;
+		@include transition(all, 0.2s, ease);
+		h2{
+			display: inline-block;
+		}
+
+		.col6{
+			width: 65%;
+		}
+
+		.col3{
+			width: 20%;
+			text-align: center;
+		}
+
+		.col2{
+			width: 10%;
+			text-align: right;
+		}
+
+		.postSocial{
+			color: #777;
+			i{
+				margin-left: 20px;
+				color: #777;
+			}
+			i.likePost.active{
+				color: #d2527f;
+			}
+			i.reportPost.active{
+				color: #c0392b;
+			}
+		}
+
+		.authorName{
+			color: #999;
+		}
+	}
+}
+
+.post{
+	padding: 20px 10px;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+.post:hover, .post.active
+{
+	background: #fff;
+}
+
+.post .postContent{
+	display: none;
+}
+
+.post.active .postContent{
+	display: block;
+}
+.postHeader div{
+	display: inline-block;
+}
+
+// Create Posts
+
+.categoryCreateHeader{
+	background:url('https://download.unsplash.com/reserve/wVlfnlTbRtK8eGvbnBZI_VolkanOlmez_005.jpg') center;
+	background-size: cover;
+	color: #eee;
+}
+
+input,textarea{
+	outline: none;
+	border: none;
+	background: transparent;
+	resize:none;
+}
+
+input.createCategoryName{
+	display: block;
+	width: 600px;
+	text-align: center;
+	margin: auto;
+	font-family: Montserrat;
+	font-size: 3em;
+	color: #eee;
+}
+textarea.createCategoryDescription{
+	color: #eee;
+	height: 80px;
+}
+
+input.createCategoryImage{
+	display: block;
+	width: 600px;
+	text-align: center;
+	margin: auto;
+	color: #eee;
+}
+
+.createPost{
+	margin-top: 40px;
+}
+
+.createPostTitle{
+	font-family: Montserrat;
+	font-size: 18px;
+	display: block;
+}
+
+textarea.createPostDescription{
+	width: 100%;
+	height: 200px;
+}
+a.saveCreated{
+	text-decoration: none;
+	background: #34495e;
+	padding: 10px 20px;
+	color: #fff;
+	font-family: Montserrat;
+}
